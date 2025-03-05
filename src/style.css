@@ -1,16 +1,21 @@
 :root {
-  font-family: "Poppins", sans-serif, system-ui, Avenir, Helvetica, Arial,
+  font-family: 'Poppins', sans-serif, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   font-weight: 400;
   font-style: normal;
 
   color-scheme: light dark;
-  color: #000000;
+  color: var(--default-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-green: #0e3835;
+  --secondary-green: #ebefe2;
+  --default-white: #ffffff;
+  --default-black: #000000;
 }
 
 .thin {
@@ -23,6 +28,10 @@
 
 .light {
   font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
 }
 
 .medium {
@@ -45,20 +54,32 @@
   font-weight: 900;
 }
 
-.white {
-  color: #ffffff;
+.text-white {
+  color: var(--default-white);
 }
 
-.black {
-  color: #000000;
+.text-black {
+  color: var(--default-black);
+}
+
+.text-primary-green {
+  color: var(--primary-green);
+}
+
+.bg-white {
+  background-color: var(--default-white);
+}
+
+.bg-black {
+  background-color: var(--default-black);
 }
 
 .bg-primary-green {
-  background-color: #85a586;
+  background-color: var(--primary-green);
 }
 
 .bg-secondary-green {
-  background-color: #ebefe2;
+  background-color: var(--secondary-green);
 }
 
 * {

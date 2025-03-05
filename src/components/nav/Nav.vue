@@ -6,12 +6,12 @@
 <template>
   <nav class="bg-primary-green">
     <a href="/"
-      ><p class="logo semi-bold white-text">{{ logo.label }}</p></a
+      ><p class="logo semi-bold text-white">{{ logo.label }}</p></a
     >
     <ul class="nav-list">
       <li v-for="{ label, href } in links" :key="label">
         <a :href="href" target="_blank"
-          ><p class="white-text semi-bold">{{ label }}</p></a
+          ><p class="text-white semi-bold">{{ label }}</p></a
         >
       </li>
     </ul>
