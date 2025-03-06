@@ -49,6 +49,7 @@
     padding: 5px 0 10px;
     width: 205px;
     margin: 0 auto;
+    background-color: transparent;
     border-bottom: 1px solid var(--default-black);
    }
    @media (max-width: 768px) {

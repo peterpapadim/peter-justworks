@@ -182,8 +182,8 @@
 
   .submit {
     position: relative;
-    height: 40px;
-    width: 250px;
+    height: 50px;
+    width: 275px;
     margin-top: 30px;
     font-size: 16px;
     background-color: var(--primary-green);
@@ -209,6 +209,10 @@
         .add-card-li {
             height: 168px;
             border: 2px dashed rgba(147, 147, 147, 1);
+        }
+        .submit {
+            height: 40px;
+            width: 250px;
         }
     }
     @media (min-width: 1024px) {

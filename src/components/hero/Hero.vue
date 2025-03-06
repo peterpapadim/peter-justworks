@@ -10,8 +10,8 @@
 
 <style scoped>
   h1 {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 16px;
   }
 
   h2 {

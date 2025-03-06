@@ -21,5 +21,7 @@
   }
   select {
     font-size: 36px;
+    background-color: transparent;
+    color: var(--default-black);
   }
 </style>
