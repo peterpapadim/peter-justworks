@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  const emit = defineEmits(['set-dollar-amount']);
+  const emit = defineEmits(['update-dollar-amount']);
   const dollarInput = ref(100);
 
   const emitValue = () => {
-    emit('set-dollar-amount', dollarInput.value);
+    emit('update-dollar-amount', dollarInput.value);
   };
 </script>
 
@@ -17,7 +17,7 @@
       id="dollar-input"
       name="dollar-input"
       class="medium text-primary-green"
-      step="100"
+      step="1"
       min="1"
       max="1000000000"
       required
@@ -50,5 +50,10 @@
     width: 205px;
     margin: 0 auto;
     border-bottom: 1px solid var(--default-black);
+   }
+   @media (max-width: 768px) {
+     .input-wrapper {
+       margin-top: -80px;
+     }
    }
 </style>
