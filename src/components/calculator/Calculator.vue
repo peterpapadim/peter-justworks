@@ -131,8 +131,7 @@
 <template>
   <form @submit.prevent="onFormSubmit">
     <DollarInput @update-dollar-amount="updateDollarAmount" />
-    <p class="loading" v-if="loading">Loading...</p>
-    <ul v-else>
+    <ul>
       <li
         v-for="(selectedCurrency, index) in selectedCurrencies"
         :key="`key-${index}-${Math.random()}`"
