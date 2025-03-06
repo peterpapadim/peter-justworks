@@ -71,6 +71,12 @@ CoinCalc is designed to be fast, easy, and reliable. Everything happens on the f
 
 Use Lighthouse and Chrome Web Vitals extension to keep an eye on and improve Google Core Vitals, Performance, Accessibility, Best Practices, and SEO.
 
+#### Mobile
+<img src="src/assets/light-house_mobile.png" alt="Mobile" height="150px" width="450px">
+
+#### Desktop
+<img src="src/assets/light-house_desktop.png" alt="Desktop" height="150px" width="450px"> 
+
 ## Future Plans
 
 - Explore a Vue Full Stack Framework such as Nuxt that supports SSR and SSG for further optimization opprotunities. 
