@@ -1,5 +1,5 @@
 [Peter Papadimitropoulos](https://www.codepeter.com) <br>
-[Justworks - Software Engineer](https://boards.greenhouse.io/justworks/jobs/6407460?gh_jid=6407460)<br>
+[Justworks - Software Engineer, Marketing Website](https://boards.greenhouse.io/justworks/jobs/6407460?gh_jid=6407460)<br>
 Coding Exercise - March 2025<br><br>
 
 # [CoinCalc](https://peter-justworks.vercel.app/)
