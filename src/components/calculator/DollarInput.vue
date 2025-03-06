@@ -11,18 +11,21 @@
 <template>
   <div class="input-wrapper bg-white">
     <label for="dollar-input">Enter the amount in USD to convert:</label>
-    <input
-      type="number"
-      v-model="dollarInput"
-      id="dollar-input"
-      name="dollar-input"
-      class="medium text-primary-green"
-      step="1"
-      min="1"
-      max="1000000000"
-      required
-      @input="emitValue"
-    />
+    <div class="formatted-input">
+      <span>$</span>
+      <input
+        type="number"
+        v-model="dollarInput"
+        id="dollar-input"
+        name="dollar-input"
+        class="medium text-primary-green"
+        step="1"
+        min="1"
+        max="1000000000"
+        required
+        @input="emitValue"
+      />
+    </div>
   </div>
 </template>
 
@@ -36,11 +39,21 @@
     padding: 22px 15px;
     margin: 0 auto;
     margin-top: -120px;
+    text-align: center;
   }
   label {
     font-size: 16px;
     margin-bottom: 16px;
     text-align: center;
+  }
+  .formatted-input {
+    position: relative;
+  }
+  span {
+    font-size: 55px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
   }
   #dollar-input {
     font-size: 55px;
