@@ -25,16 +25,15 @@ CoinCalc is designed to be fast, easy, and reliable. Everything happens on the f
 
 1. **User Inputs**:
    - Enter the USD amount and choose your allocations.
-   - Pick at least 2 and up to 5 currencies.
+   - Pick up to 5 currencies.
    - We keep track of your inputs, including the dollar amount, selected currencies, and how much you want to allocate to each one.
 
 2. **Form Submission**:
    - When you hit submit, we check your inputs to make sure everything's good to go.
    - We use the Coinbase API to get the latest data and process your inputs.
    - We handle errors like:
-     - Not selecting at least 2 currencies.
      - Allocations not adding up to 100%.
-     - Selecting a currency without setting an allocation.
+     - Selecting a allocation without setting an currency.
 
 3. **Showing Results**:
    - We calculate how much of each asset you can buy based on your allocations.
