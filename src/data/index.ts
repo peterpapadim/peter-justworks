@@ -3,10 +3,13 @@ export const nav = {
     label: 'CoinCalc',
   },
   links: [
-    { label: 'github', href: 'https://www.github.com' },
+    {
+      label: 'github',
+      href: 'https://github.com/peterpapadim/peter-justworks',
+    },
     {
       label: 'codepeter',
-      href: 'https://github.com/peterpapadim/peter-justworks',
+      href: 'https://www.codepeter.com',
     },
   ],
 };
