@@ -12,11 +12,11 @@
   </header>
   <main>
     <section class="hero-section bg-primary-green text-white">
-      <div class="width-wrapper">
+      <div class="width-wrapper hero-transition-in">
         <Hero v-bind="hero" />
       </div>
     </section>
-    <section>
+    <section class="calculator-transition-in">
       <Calculator />
     </section>
   </main>
@@ -33,6 +33,32 @@
     .width-wrapper {
       max-width: 600px;
       margin: 0 auto;
+    }
+  }
+  .hero-transition-in {
+    animation: hero-transition-in 1s;
+  }
+  @keyframes hero-transition-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .calculator-transition-in {
+    animation: calculator-transition-in 1s;
+  }
+  @keyframes calculator-transition-in {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 </style>
