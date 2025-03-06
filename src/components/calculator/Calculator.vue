@@ -8,16 +8,13 @@
     formatPercentStringToNumber,
   } from '../../utils/coinbase';
   import type { FetchPayload } from '../../utils/coinbase';
+
   import DollarInput from './DollarInput.vue';
   import CurrencyCard from './CurrencyCard.vue';
   import AddCard from './AddCard.vue';
 
-  const dollarAmount = ref(100);
-  const updateDollarAmount = (value: number) => {
-    dollarAmount.value = value;
-  };
-
   const data = ref<FetchPayload>({ currency: '', rates: {} });
+  const dollarAmount = ref(100);
   const loading = ref<boolean>(false);
   const error = ref<string>('');
   const selectedCurrencies = reactive<
@@ -31,6 +28,7 @@
     { currency: 'ETH', shares: 0, allocation: '0%' },
   ]);
 
+  // Computed Properties
   const allSelectedCurrencyKeys = computed(() => {
     return selectedCurrencies.map(item => item.currency);
   });
@@ -47,6 +45,11 @@
     }, 0);
   });
 
+  // Functions to update state/refs
+  const updateDollarAmount = (value: number) => {
+    dollarAmount.value = value;
+  };
+
   const updateSelectedCurrency = (
     newCurrency: { currency: string; shares: number; allocation: string },
     index: number
@@ -62,26 +65,30 @@
     selectedCurrencies.push({ currency: '--', shares: 0, allocation: '0%' });
   };
 
+  // Providing functions to child components
   provide('calculator', {
     updateSelectedCurrency,
     removeSelectedCurrency,
     addCurrency,
   });
 
+  // Function to fetch exchange rates
   const fetchData = async () => {
     try {
       loading.value = true;
       const response = await fetchExchangeRates('USD');
-      const result = await response.json();
-      data.value = result.data;
+      const json = await response.json();
+      data.value = json.data;
     } catch (fetchError) {
-      error.value = `Unable to fetch data: ${error}`;
-      console.error('Error fetching data:', error);
+      const errorMsg = `Unable to fetch data: ${fetchError}`;
+      error.value = errorMsg;
+      console.error(errorMsg);
     } finally {
       loading.value = false;
     }
   };
 
+  // Function to handle form submission
   const onFormSubmit = async () => {
     error.value = '';
     if (getTotalAllocation.value !== 100) {
@@ -124,7 +131,8 @@
 <template>
   <form @submit.prevent="onFormSubmit">
     <DollarInput @update-dollar-amount="updateDollarAmount" />
-    <ul>
+    <p class="loading" v-if="loading">Loading...</p>
+    <ul v-else>
       <li
         v-for="(selectedCurrency, index) in selectedCurrencies"
         :key="`key-${index}-${Math.random()}`"

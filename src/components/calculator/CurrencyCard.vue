@@ -3,10 +3,11 @@
   import AllocationDropdown from './AllocationDropdown.vue';
   import { computed, inject } from 'vue';
   import type { CurrencyCardProps } from './calculator.types';
+
   const { currency, availableCurrencyKeys, shares, allocation, index } =
     defineProps<CurrencyCardProps>();
 
-  interface UpdateSelectedCurrencyTypes {
+  interface InjectedTypes {
     updateSelectedCurrency: (
       newCurrency: { currency: string; shares: number; allocation: string },
       index: number
@@ -15,7 +16,8 @@
     addCurrency: () => void;
   }
 
-  const calculator = inject<UpdateSelectedCurrencyTypes>('calculator');
+  // Injecting functions provided by Calculator.vue
+  const calculator = inject<InjectedTypes>('calculator');
 
   const onCurrencyDropdownChange = (event: Event) => {
     const target = event.target as HTMLSelectElement | null;
@@ -29,6 +31,7 @@
     }
   };
 
+  // Event handlers
   const onAllocationDropdownChange = (event: Event) => {
     const target = event.target as HTMLSelectElement | null;
     const newValue = {
@@ -47,6 +50,7 @@
     }
   };
 
+  // Computed Properties
   const getCurrencyDropdownOptions = computed(() => {
     return [currency, ...availableCurrencyKeys];
   });
