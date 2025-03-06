@@ -16,6 +16,8 @@
   --secondary-green: #ebefe2;
   --default-white: #ffffff;
   --default-black: #000000;
+  --red: #e11313;
+  --light-gray: #f7f4f8;
 }
 
 .thin {
@@ -82,6 +84,23 @@
   background-color: var(--secondary-green);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--light-gray);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -96,3 +115,30 @@ ol {
 a {
   text-decoration: none;
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: white;
+  background-image: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
